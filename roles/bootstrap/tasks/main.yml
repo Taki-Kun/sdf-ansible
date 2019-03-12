@@ -1,0 +1,48 @@
+---
+
+- block:
+
+  - name: "load customized common vars"
+    include_vars: file="{{ playbook_dir }}/conf/common/vars.yml"
+
+  - name: "load customized common vars for {{ EDITION }}"
+    include_vars: file="{{ playbook_dir }}/conf/common/vars_{{ EDITION }}.yml"
+
+- block:
+
+  - name: "Clean bootstrap_env directories"
+    file: path="/opt/ansible/bootstrap_env" state=absent
+
+  - name: "Sync requirements.txt"
+    include_tasks: "roles/common/tasks/loop_fileglob_synchronize.yml"
+    loop:
+      - { src: "{{ playbook_dir }}/virtual_environment/bootstrap_env/requirements.txt", dest: "/opt/ansible/" }
+    loop_control:
+      loop_var: outer_item
+
+  - name: "Install bootstrap_env python package"
+    pip:
+      chdir: "/opt/ansible"
+      requirements: "/opt/ansible/requirements.txt"
+      virtualenv: "/opt/ansible/bootstrap_env"
+      virtualenv_command: "/usr/local/python2.7/bin/virtualenv"
+      virtualenv_python: "python2.7"
+
+- block:
+
+  - name: "Create target docker_certs directories"
+    include_tasks: "roles/common/tasks/loop_items_file.yml"
+    loop:
+      - name: "docker_certs_dir"
+        directories:
+          - "/etc/docker/certs.d/{{ registry }}"
+    loop_control:
+      loop_var: outer_item
+      label: "{{ outer_item.name }}"
+
+  - name: "Sync docker_certs"
+    include_tasks: "roles/common/tasks/loop_fileglob_synchronize.yml"
+    loop:
+      - { src: "{{ playbook_dir }}/docker_certs.d/{{ registry }}/ca.crt", dest: "/etc/docker/certs.d/{{ registry }}/" }
+    loop_control:
+      loop_var: outer_item

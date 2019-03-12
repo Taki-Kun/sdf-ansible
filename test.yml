@@ -1,0 +1,11 @@
+---
+
+- name: "Echo env"
+  hosts: "{{ GAME_HOST }}"
+  connection: local
+  become: false
+  remote_user: root
+  gather_facts: false
+  any_errors_fatal: true
+  roles:
+    - role: test

@@ -1,0 +1,11 @@
+---
+
+- name: "initializing deployment target"
+  hosts: all
+  become: false
+  remote_user: root
+  gather_facts: false
+  any_errors_fatal: true
+  serial: 1
+  roles:
+    - { role: bootstrap, tags: ["bootstrap"] }

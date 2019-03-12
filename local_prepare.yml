@@ -1,0 +1,11 @@
+---
+
+- name: "Generate Template Configuration"
+  hosts: "{{ GAME_HOST }}"
+  connection: local
+  become: false
+  remote_user: root
+  gather_facts: false
+  any_errors_fatal: true
+  roles:
+    - { role: local, tags: ["local"] }

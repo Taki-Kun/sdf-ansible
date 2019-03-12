@@ -1,0 +1,10 @@
+---
+
+- name: "load customized common vars"
+  include_vars: file="{{ playbook_dir }}/conf/common/vars.yml"
+
+- name: "load customized common vars for {{ EDITION }}"
+  include_vars: file="{{ playbook_dir }}/conf/common/vars_{{ EDITION }}.yml"
+
+- name: "include_tasks"
+  include_tasks: "pre_{{ deployment_method }}_deployment.yml"

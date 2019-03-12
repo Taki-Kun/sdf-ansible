@@ -1,0 +1,33 @@
+---
+# task file for game
+
+# Configure Game init configure.
+
+- name: "load customized common group vars"
+  include_vars: file="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/common/vars.yml"
+
+- name: "load customized common group vars for {{ EDITION }}"
+  include_vars: file="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/common/vars_{{ EDITION }}.yml"
+
+- name: "load customized game vars"
+  include_vars: file="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/{{ dirtype }}/vars.yml"
+
+- name: "load customized game vars for {{ EDITION }}"
+  include_vars: file="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/{{ dirtype }}/vars_{{ EDITION }}.yml"
+
+# 优先级最高，最后加载
+- name: "load games code map config"
+  include_vars: file="{{ vars_games_code_map_yml }}"
+
+- name: "Generate Configuration Template"
+  include_tasks: "roles/common/tasks/loop_items_template.yml"
+  loop: "{{ build_toconfig_map }}"
+  loop_control:
+    loop_var: outer_item
+
+- name: "archive all config files"
+  include_tasks: "roles/common/tasks/loop_items_archive.yml"
+  loop: "{{ archive_config_map }}"
+
+- name: "include_tasks"
+  include_tasks: "{{ deployment_method }}_deployment.yml"

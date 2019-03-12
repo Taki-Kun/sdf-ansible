@@ -1,0 +1,35 @@
+---
+
+# useradd {{ username }}
+# passwd {{ username }}
+# su - {{ username }}
+#
+# ssh-keygen -t rsa
+
+- hosts: all
+  user: root
+  tasks:
+    - name: create user
+      user: name={{ username }} shell=/bin/bash createhome=yes
+
+    - name: set others authorized key
+      authorized_key:
+        user: "{{ username }}"
+        key: "{{ lookup('file', '/home/{{ username }}/.ssh/id_rsa.pub') }}"
+        state: present
+      when: username != 'root'
+
+    - name: set root authorized key
+      authorized_key:
+        user: "root"
+        key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+        state: present
+      when: username == 'root'
+
+    - name: update sudoers file
+      lineinfile:
+        dest: /etc/sudoers
+        insertafter: EOF
+        line: '{{ username }} ALL=(ALL) NOPASSWD: ALL'
+        regexp: '^{{ username }} .*'
+        state: present

@@ -1,0 +1,11 @@
+---
+
+- name: Generate template
+  template:
+    src: "{{ item }}"
+    dest: "{{ outer_item.dest }}"
+    mode: 0644
+    owner: "{{ deploy_user }}"
+    group: "{{ deploy_user }}"
+  delegate_to: localhost
+  with_fileglob: "{{ outer_item.src }}"

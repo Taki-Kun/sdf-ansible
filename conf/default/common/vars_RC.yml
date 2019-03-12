@@ -1,0 +1,84 @@
+---
+
+##################################################
+## game.properties
+##################################################
+central_activityURL: ""
+central_shoppingCenterURL: ""
+central_logLevel: ""
+central_game_properties_zookeeper_server_url: "{{ Docker_zookeeper_container_ipv4_address }}"
+central_old_client_map: ""
+
+##################################################
+## ClubDataBaseConfig.json
+##################################################
+central_club_mysql_address: ""
+central_club_mysql_port: "3306"
+central_club_mysql_user_name: ""
+central_club_mysql_passwd: ""
+
+##################################################
+## DictDataBaseConfig.json
+##################################################
+central_mysql_dict_host: ""
+central_mysql_dict_port: "3306"
+central_mysql_dict_user: ""
+central_mysql_dict_password: ""
+
+##################################################
+## DataBaseConfig.json
+##################################################
+central_mysql_host: ""
+central_mysql_port: "3306"
+central_mysql_user: ""
+central_mysql_password: ""
+central_db_name: ""
+central_log_db_name: ""
+
+##################################################
+## GameConfig.json
+##################################################
+central_sub_project_ids: ""
+
+##################################################
+## ResConfig.json
+##################################################
+central_res_conf_game_zip_url: ""
+central_res_conf_head_img_url: ""
+central_res_conf_image_url: ""
+central_res_conf_record_url: ""
+central_res_conf_merge_android_url: ""
+central_res_conf_merge_IOS_url: ""
+central_res_conf_merge_desc: ""
+
+##################################################
+## UserConfig.json
+##################################################
+central_privateRoomDiamond: ""
+central_client_version: ""
+central_check_version_list: "all"
+
+##################################################
+## cardControlConfig
+##################################################
+central_card_control_config: ""
+
+##################################################
+## logDataBaseConfig:
+##################################################
+central_log_mysql_host: ""
+central_log_mysql_port: "3306"
+central_log_mysql_user: ""
+central_log_mysql_password: ""
+
+##################################################
+## conf/cluster/hazelcast.xml
+##################################################
+game_server_host: "{{ docker_network_subnet | regex_replace('0/24', '10') | default('') }}"
+gateway1_server_host: "{{ docker_network_subnet | regex_replace('0/24', '11') | default('') }}"
+gateway2_server_host: "{{ docker_network_subnet | regex_replace('0/24', '12') | default('') }}"
+
+##################################################
+## API KEY
+##################################################
+central_apikey: ""

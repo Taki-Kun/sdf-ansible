@@ -1,0 +1,105 @@
+---
+
+deploy_environment: "production"
+
+#####################################################################
+# Deploy path
+
+deploy_game_dir: "/data/game"
+
+deploy_redis_dir: "/data/redis"
+
+deploy_zookeeper_dir: "/data/zookeeper"
+
+#####################################################################
+# Docker registry
+
+registry: "docker-registry.issenn.com"
+
+registry_default_game_usergroup: "game_mahjong"
+
+#####################################################################
+# Docker Compose
+
+#--------------------------------------------------------------------
+
+Docker_game_image: "{{ registry }}/{{ registry_default_game_usergroup }}/{{ GAME_NAME }}:latest"
+
+Docker_game_image_tag: "{{ game_version }}"
+
+Docker_game_container: "{{ SERVICES_NAME }}"
+
+Docker_compose_game_service: "{{ SERVICES_NAME }}"
+
+Docker_compose_network: "{{ GROUP_NAME }}-inside"
+
+Docker_compose_game_volume: "{{ SERVICES_NAME }}-game-data"
+
+#--------------------------------------------------------------------
+
+Docker_redis_image_build: "off"
+
+Docker_redis_image: "{{ registry }}/sdf-redis"
+
+Docker_redis_image_tag: "latest"
+
+Docker_redis_container: "{{ SERVICES_NAME }}-redis"
+
+Docker_compose_redis_service: "{{ SERVICES_NAME }}-redis"
+
+Docker_compose_redis_volume: "{{ SERVICES_NAME }}-redis-data"
+
+Docker_redis_port: "6380"
+
+#--------------------------------------------------------------------
+
+Docker_zookeeper_image_build: "off"
+
+Docker_zookeeper_image: "{{ registry }}/sdf-zookeeper"
+
+Docker_zookeeper_image_tag: "latest"
+
+Docker_zookeeper_container: "{{ SERVICES_NAME }}-zookeeper"
+
+Docker_compose_zookeeper_service: "{{ SERVICES_NAME }}-zookeeper"
+
+Docker_compose_zookeeper_volume: "{{ SERVICES_NAME }}-zookeeper-data"
+
+Docker_zookeeper_port: "2181"
+
+#####################################################################
+
+deploy_docker_dir: "/opt/docker"
+docker_mount_dir: "{{ deploy_docker_dir }}"
+
+deploy_docker_sub_dir:
+  - name: "deploy_docker_game_dir"
+    directories:
+      - "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/{{ dirtype }}/logs"
+  - name: "deploy_docker_redis_dir"
+    directories:
+      - "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/redis/etc/redis"
+      - "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/redis/log/redis"
+
+deploy_docker_zookeeper_dir:
+  - name: "deploy_docker_zookeeper_dir"
+    directories:
+      - "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/etc/zookeeper"
+      - "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/log/zookeeper"
+
+#####################################################################
+
+deploy_docker_map:
+  - { src: "{{ target_game_dir }}/redis/etc/redis/redis.conf", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/redis/etc/redis/redis.conf" }
+  - { src: "{{ target_game_dir }}/docker-compose.yml", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/docker-compose.yml" }
+
+deploy_docker_zookeeper_map:
+  - { src: "{{ target_game_dir }}/zookeeper/etc/zookeeper/configuration.xsl", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/etc/zookeeper/configuration.xsl" }
+  - { src: "{{ target_game_dir }}/zookeeper/etc/zookeeper/log4j.properties", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/etc/zookeeper/log4j.properties" }
+  - { src: "{{ target_game_dir }}/zookeeper/etc/zookeeper/zoo.cfg", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/etc/zookeeper/zoo.cfg" }
+  - { src: "{{ target_game_dir }}/zookeeper/etc/zookeeper/zoo_sample.cfg", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/etc/zookeeper/zoo_sample.cfg" }
+  - { src: "{{ target_game_dir }}/docker-compose.zookeeper.yml", dest: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/docker-compose.yml" }
+
+#####################################################################
+
+Docker_zookeeper_container_ipv4_address: "{{ docker_network_subnet | regex_replace('0/24', '2') }}"

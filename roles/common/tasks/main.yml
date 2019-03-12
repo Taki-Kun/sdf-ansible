@@ -1,0 +1,55 @@
+---
+
+- name: "load customized common vars"
+  include_vars: file="{{ playbook_dir }}/conf/common/vars.yml"
+
+- name: "load customized common vars for {{ EDITION }}"
+  include_vars: file="{{ playbook_dir }}/conf/common/vars_{{ EDITION }}.yml"
+
+- name: "GROUP_NAME is [{{ GROUP_NAME }}], DIR_NAME is [{{ DIR_NAME }}]"
+  debug: msg=""
+
+- block:
+
+  - name: "Clean build directories"
+    file: path="{{ build_game_dir }}" state=absent
+
+  - name: "Clean target directories"
+    file: path="{{ target_game_dir }}" state=absent
+
+  - name: "Create build directories"
+    include_tasks: "loop_items_file.yml"
+    loop: "{{ build_sub_dir }}"
+    loop_control:
+      loop_var: outer_item
+      label: "{{ outer_item.name }}"
+
+  - name: "Create target directories"
+    file: path="{{ target_game_dir }}" state=directory mode=0755 owner={{ deploy_user }} group={{ deploy_user }}
+
+  - name: "Create target redis directories"
+    file: path="{{ target_game_dir }}/redis/etc/redis" state=directory mode=0755 owner={{ deploy_user }} group={{ deploy_user }}
+
+  - name: "Create target zookeeper directories"
+    file: path="{{ target_game_dir }}/zookeeper/etc/zookeeper" state=directory mode=0755 owner={{ deploy_user }} group={{ deploy_user }}
+    when:
+      - dirtype == 'game'
+      - use_zookeeper == 'on'
+
+- block:
+
+  - name: "sync binary to build folder"
+    include_tasks: "loop_fileglob_synchronize.yml"
+    loop: "{{ build_binary_map }}"
+    loop_control:
+      loop_var: outer_item
+
+  - name: "sync template to build folder"
+    include_tasks: "loop_fileglob_synchronize.yml"
+    loop: "{{ build_template_map }}"
+    loop_control:
+      loop_var: outer_item
+
+- name: "archive all binary files"
+  include_tasks: "loop_items_archive.yml"
+  loop: "{{ archive_binary_map }}"

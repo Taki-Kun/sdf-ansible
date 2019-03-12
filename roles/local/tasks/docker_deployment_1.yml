@@ -1,0 +1,28 @@
+---
+
+- block:
+
+  - name: "Build game image for Docker from Dockerfile"
+    docker_image:
+      name: "{{ registry }}/{{ registry_default_game_usergroup }}/{{ DIR_NAME }}"
+      tag: "{{ game_version }}"
+      push: yes
+      force: yes
+      path: "{{ target_game_dir }}"
+      dockerfile: "Dockerfile.game_configuration"
+      state: present
+
+  - name: "Tag and push game image with latest tag to private repo"
+    docker_image:
+      name: "{{ registry }}/{{ registry_default_game_usergroup }}/{{ DIR_NAME }}"
+      repository: "{{ registry }}/{{ registry_default_game_usergroup }}/{{ DIR_NAME }}:latest"
+      tag: "{{ game_version }}"
+      push: yes
+      force: yes
+      state: present
+
+  - name: "Remove game image with latest tag for Docker"
+    docker_image:
+      name: "{{ registry }}/{{ registry_default_game_usergroup }}/{{ DIR_NAME }}"
+      force: yes
+      state: absent

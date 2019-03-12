@@ -1,0 +1,105 @@
+---
+
+##################################################
+## game.properties
+##################################################
+product_id: ""
+central_game_properties_game_port: ""
+central_res_conf_port: ""
+central_game_properties_web_port: ""
+central_game_properties_wx_port: ""
+central_langPath: "lang/lang_zh.txt"
+central_checkAgent: "false"
+central_logFile: "./logs/dszy.log"
+central_logConsoleDisable: "0"
+central_game_properties_simple_proxy: "true"
+central_game_properties_singlon: "true"
+central_workerURL: "{{ deploy_game_dir }}/{{ directory }}/dsqp/run.sh worker"
+central_pyjRecordPath: "./fileData/pyjrecord/"
+central_gameType: ""
+central_appid: ""
+central_userIdLength: "8"
+central_userIdPrefix: ""
+central_consoleTest: "true"
+
+##################################################
+## CacheConfig.json
+##################################################
+central_redis_port: "6380"
+central_redis_url: "127.0.0.1"
+central_redis_database: "1"
+central_redis_database2: "2"
+central_redis_passwd: ""
+central_redis_max_total: "5000"
+central_redis_max_idle: "200"
+central_redis_min_idle: "200"
+central_redis_max_wait_millis: "2000"
+central_redis_codec: "1"
+
+##################################################
+## ClubDataBaseConfig.json
+##################################################
+central_club_mysql_char_set: "utf-8"
+central_club_mysql_db_fallow: "2"
+central_club_mysql_db_maxconn: "30"
+central_club_mysql_club_dict_db_name: "club_dict"
+central_club_mysql_club_db_name: "club"
+central_club_mysql_club_log_db_name: "club_log"
+
+##################################################
+## DictDataBaseConfig.json
+##################################################
+central_mysql_dict_db_char_set: "utf-8"
+central_mysql_dict_db_fallow: "2"
+central_mysql_dict_db_max_conn: "30"
+central_mp_db_name: "dsqp_mp"
+central_dict_db_name: "dsqp_dict"
+
+##################################################
+## DataBaseConfig.json
+##################################################
+central_mysql_db_char_set: "utf-8"
+central_mysql_db_fallow: "2"
+central_mysql_db_max_conn: "30"
+
+##################################################
+## GameConfig.json
+##################################################
+central_ddz_supot_public: "flase"
+central_ddz_aways_grab: "flase"
+central_invite_room_max_id: "9999"
+central_game_config_mjTestCard: "false"
+central_game_config_testModel: "true"
+
+##################################################
+## UserConfig.json
+##################################################
+central_day_lost_cash_limit: "10000000"
+central_day_win_cash_limit: "10000000"
+central_play_lost_cash_limit: "500000"
+central_play_win_cash_limit: "500000"
+central_room_lost_cash_limit: "10000000"
+central_room_win_cash_limit: "10000000"
+central_cashLimit_open: "false"
+central_check_flag: "true"
+central_newBee_cash: "0"
+central_recharge_comfirm_switch: "false"
+central_default_city: "0"
+central_sms_timeout: "300"
+
+##################################################
+## logDataBaseConfig:
+##################################################
+central_log_mysql_db_char_set: "utf-8"
+central_log_mysql_db_fallow: "2"
+central_log_mysql_db_max_conn: "30"
+
+##################################################
+## conf/cluster/hazelcast.xml
+##################################################
+gateway1_server_host: ""
+gateway2_server_host: ""
+hazelcast_multicast: "false"
+hazelcast_tcp_ip: "true"
+hazelcast_group_name: "{{ GROUP_NAME }}"
+hazelcast_group_password: "{{ GROUP_NAME }}"

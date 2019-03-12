@@ -1,0 +1,56 @@
+---
+# task file for create default conf
+
+- name: "load customized common vars"
+  include_vars: file="{{ playbook_dir }}/conf/common/vars.yml"
+
+- name: "GROUP_NAME is [{{ GROUP_NAME }}], DIR_NAME is [{{ DIR_NAME }}]"
+  debug: msg="GROUP_NAME is [{{ GROUP_NAME }}], DIR_NAME is [{{ DIR_NAME }}]"
+
+- block:
+
+  - name: "conf check (game group dir)"
+    stat: path="{{ playbook_dir }}/conf/{{ GROUP_NAME }}" get_md5=false get_checksum=false
+    register: game_group_dir_st
+
+  - name: "clean {{ GROUP_NAME }} in conf dir if error file exists"
+    file: path="{{ playbook_dir }}/conf/{{ GROUP_NAME }}" state=absent
+    register: game_group_dir_clean_st
+    ignore_errors: true
+    when:
+      - game_group_dir_st.stat.exists is defined
+      - game_group_dir_st.stat.exists
+      - game_group_dir_st.stat.isdir is defined
+      - not game_group_dir_st.stat.isdir
+
+  - name: "create default vars*.yml for {{ GROUP_NAME }} in conf dir if not exists"
+    copy: src="{{ playbook_dir }}/conf/default/" dest="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/"
+    when:
+      - ((game_group_dir_st.stat.exists is defined) and (not game_group_dir_st.stat.exists))
+        or ((game_group_dir_clean_st.failed is defined) and (not game_group_dir_clean_st.failed))
+
+  when: GROUP_NAME != 'ungrouped'
+
+- block:
+
+  - name: "conf check (game type dir)"
+    stat: path="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/{{ dirtype }}" get_md5=false get_checksum=false
+    register: game_type_dir_st
+
+  - name: "clean {{ dirtype }} in conf dir if error file exists"
+    file: path="{{ playbook_dir }}/conf/{{ GROUP_NAME }}/{{ dirtype }}" state=absent
+    register: game_type_dir_clean_st
+    ignore_errors: true
+    when:
+      - game_type_dir_st.stat.exists is defined
+      - game_type_dir_st.stat.exists
+      - game_type_dir_st.stat.isdir is defined
+      - not game_type_dir_st.stat.isdir
+
+  - name: "create default vars*.yml for {{ dirtype }} in conf dir if not exists"
+    copy: src="{{ playbook_dir }}/conf/ungrouped/default/" dest="{{ playbook_dir }}/conf/ungrouped/{{ dirtype }}/"
+    when:
+      - ((game_type_dir_st.stat.exists is defined) and (not game_type_dir_st.stat.exists)
+        or (game_type_dir_clean_st.failed is defined) and (not game_type_dir_clean_st.failed))
+
+  when: GROUP_NAME == 'ungrouped'

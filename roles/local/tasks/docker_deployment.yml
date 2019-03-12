@@ -1,0 +1,24 @@
+---
+
+- name: "Generate Docker Template"
+  include_tasks: "roles/common/tasks/loop_items_template.yml"
+  loop: "{{ target_docker_map }}"
+  loop_control:
+    loop_var: outer_item
+
+- name: "Generate Docker Zookeeper Template"
+  include_tasks: "roles/common/tasks/loop_items_template.yml"
+  loop: "{{ target_docker_zookeeper_map }}"
+  loop_control:
+    loop_var: outer_item
+  when:
+    - dirtype == 'game'
+    - use_zookeeper == 'on'
+
+- name: "Log into private registry and force re-authorization"
+  include_tasks: "roles/common/tasks/docker_login.yml"
+
+- include_tasks: "{{ deployment_method }}_deployment_{{ deployment_docker_submethod }}.yml"
+
+- name: "Log out of private registry"
+  include_tasks: "roles/common/tasks/docker_logout.yml"

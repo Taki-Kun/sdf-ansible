@@ -1,0 +1,5 @@
+---
+
+- name: "Create {{ outer_item.name }} directories"
+  file: path="{{ item }}" state=directory mode=0755 owner="{{ deploy_user }}" group="{{ deploy_user }}"
+  loop: "{{ outer_item.directories }}"

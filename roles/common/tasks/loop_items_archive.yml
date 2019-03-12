@@ -1,0 +1,7 @@
+---
+
+- name: "archive {{ item.src }} files"
+  archive:
+    path: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    format: gz

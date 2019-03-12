@@ -1,0 +1,195 @@
+#!/bin/sh
+#
+
+JAVA_HOME=/usr/local/jdk1.8.0_111
+#PATH=$JAVA_HOME/bin:$PATH
+#CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+
+APP_PATH={{ remote_dir }}/{{ server_name }}/dsqp
+#APP_PATH=/game/jiangsu_region/dsqp
+APP_MAINCLASS={{ APP_MAINCLASS }}
+APP_WORKERCLASS=com.dszy.game.service.launch.DSQPTestWorker
+APP_PARAM=
+
+for i in $APP_PATH/lib/*.jar;
+do
+CLASSPATH="$CLASSPATH":$i
+done
+
+for i in $APP_PATH/deploy/*.jar;
+do
+CLASSPATH="$CLASSPATH":$i
+done
+#CLASSPATH="$CLASSPATH":$APP_PATH/lib/*:$APP_PATH/deploy/*
+#JAVA_OPTS="-Xms2048m -Xmx4096m -Xmn1024m -Djava.awt.headless=true -Xnoagent -Xrunjdwp:transport=dt_socket,address=6643,server=y,suspend=n"
+
+# java_option_Xms="-Xms2048m" java_option_Xmx="-Xmx4096m" java_option_Xmn="-Xmn1024m"
+JAVA_OPTS=" {{ java_option_Xms }} {{ java_option_Xmx }} -XX:SurvivorRatio=10 -XX:+DoEscapeAnalysis -XX:InitialTenuringThreshold=15 -XX:CMSWaitDuration=50 -XX:MaxTenuringThreshold=15 -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:CMSInitiatingOccupancyFraction=80 -XX:+CMSParallelRemarkEnabled -XX:+AggressiveOpts -XX:+UseFastAccessorMethods -XX:-DontCompileHugeMethods -XX:ReservedCodeCacheSize=128m -XX:+PrintGCTimeStamps -XX:+PrintGCDetails -Xloggc:gc.log -XX:+DisableExplicitGC -Duser.timezone=GMT+08"
+JAVA_WORKER="-Xms128m -Xmx256m -Xmn64m -Xnoagent"
+
+psid=0
+workerid=0
+ 
+checkpid() {
+   #javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAINCLASS`
+   javaps=`ps -ef |grep "${APP_PATH}/lib" | grep -v grep |awk '{print $2}'`
+   if [ -n "$javaps" ]; then
+      psid=`echo $javaps | awk '{print $1}'`
+   else
+      psid=0
+   fi
+}
+
+checkworker() {
+   #javaps=`$JAVA_HOME/bin/jps -l | grep $APP_WORKERCLASS`
+   javaps=`ps -ef |grep -E ${APP_PATH}/lib.*${APP_WORKERCLASS} | grep -v grep |awk '{print $2}'`
+   if [ -n "$javaps" ]; then
+      workerid=`echo $javaps | awk '{print $1}'`
+   else
+      workerid=0
+   fi
+}
+
+start() {
+   checkpid
+ 
+   if [ $psid -ne 0 ]; then
+      echo "================================"
+      echo "warn: $APP_MAINCLASS already started! (pid=$psid)"
+      echo "================================"
+   else
+      echo -n "Starting $APP_MAINCLASS ..."
+      JAVA_CMD="nohup $JAVA_HOME/bin/java $JAVA_OPTS -classpath $CLASSPATH $APP_MAINCLASS $APP_PARAM -c systemConfig.yml -e production   > ./logs/server.log 2>&1 &"
+      su -c "$JAVA_CMD"
+      checkpid
+      if [ $psid -ne 0 ]; then
+         echo "(pid=$psid) [OK]"
+      else
+         echo "[Failed]"
+      fi
+   fi
+}
+
+stop() {
+   stopmain
+   stopworker
+}
+
+stopmain() {
+   checkpid
+   if [ $psid -ne 0 ]; then
+      echo -n "Stopping $APP_MAINCLASS ...(pid=$psid) "
+      su -c "kill $psid"
+      if [ $? -eq 0 ]; then
+         echo "[OK]"
+      else
+         echo "[Failed]"
+      fi
+ 
+      checkpid
+      if [ $psid -ne 0 ]; then
+         stopmain
+      fi
+   else
+      echo "================================"
+      echo "warn: $APP_MAINCLASS is not running"
+      echo "================================"
+   fi
+}
+
+stopworker() {
+   checkworker
+
+   if [ $workerid -ne 0 ]; then
+      echo -n "Stopping $APP_WORKERCLASS ...(pid=$workerid) "
+      su -c "kill $workerid"
+      if [ $? -eq 0 ]; then
+         echo "[OK]"
+      else
+         echo "[Failed]"
+      fi
+
+      checkworker
+      if [ $workerid -ne 0 ]; then
+         stopworker
+      fi
+   else
+      echo "================================"
+      echo "warn: $APP_WORKERCLASS is not running"
+      echo "================================"
+   fi
+}
+
+status() {
+   checkpid
+ 
+   if [ $psid -ne 0 ];  then
+      echo "$APP_MAINCLASS is running! (pid=$psid)"
+   else
+      echo "$APP_MAINCLASS is not running"
+   fi
+}
+
+info() {
+   echo "System Information:"
+   echo "****************************"
+   echo `head -n 1 /etc/issue`
+   echo `uname -a`
+   echo
+   echo "JAVA_HOME=$JAVA_HOME"
+   echo `$JAVA_HOME/bin/java -version`
+   echo
+   echo "APP_HOME=$APP_HOME"
+   echo "APP_MAINCLASS=$APP_MAINCLASS"
+   echo "****************************"
+}
+
+worker() {
+
+   sleep 5s
+
+   checkworker
+
+   if [ $workerid -ne 0 ]; then
+      echo "================================"
+      echo "warn: $APP_WORKERCLASS already started! (pid=$workerid)"
+      echo "================================"
+   else
+      echo -n "Starting $APP_WORKERCLASS ..."
+      JAVA_CMD="nohup $JAVA_HOME/bin/java $JAVA_WORKER -classpath $CLASSPATH $APP_WORKERCLASS $APP_PARAM  > $APP_PATH/logs/worker.log 2>&1 &"
+      su -c "$JAVA_CMD"
+      checkworker
+      if [ $workerid -ne 0 ]; then
+         echo "(pid=$workerid) [OK]"
+      else
+         echo "[Failed]"
+      fi
+   fi
+}
+
+case "$1" in
+   'start')
+      start
+      ;;
+   'stop')
+      stop
+      ;;
+   'restart')
+     stop
+     start
+     ;;
+   'status')
+     status
+     ;;
+   'info')
+     info
+     ;;
+   'worker')
+     worker
+     ;;
+  *)
+     echo "Usage: $0 {start|stop|restart|status|info|worker}"
+     exit 1
+esac
+exit 0

@@ -1,0 +1,9 @@
+---
+
+- name: "Log out of private registry"
+  docker_login:
+    registry: "{{ registry }}"
+    state: absent
+  register: logout_info
+
+- debug: msg="{{ logout_info }}"

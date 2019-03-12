@@ -1,0 +1,12 @@
+---
+
+- name: "Create default conf"
+  hosts: "{{ GAME_HOST }}"
+  connection: local
+  become: false
+  remote_user: root
+  gather_facts: false
+  any_errors_fatal: true
+  serial: 1
+  roles:
+    - { role: create_default_conf, tags: ["create_default_conf"] }

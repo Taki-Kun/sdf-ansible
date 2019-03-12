@@ -1,0 +1,30 @@
+---
+
+# - name: "print playbook vars"
+#   debug: msg="{{ role_path }},{{ deploy_environment }}"
+
+- name: "print groups"
+  debug: msg="{{ groups }}"
+
+- name: "print group_names"
+  debug: msg="{{ group_names }}"
+
+- name: "print inventory_hostname"
+  debug: msg="{{ inventory_hostname }}"
+
+- name: "print inventory_hostname_short"
+  debug: msg="{{ inventory_hostname_short }}"
+
+# - name: "print play_hosts"
+#   debug: msg="{{ play_hosts }}"
+
+# - name: "print inventory_dir"
+#   debug: msg="{{ inventory_dir }}"
+
+# - name: "print hostvars"
+#   debug: msg="{{ hostvars.get(inventory_hostname).group_names.0 }}"
+
+# - name: "print inventory_hostname"
+#   debug: msg="{{ hostvars[inventory_hostname] }}"
+
+

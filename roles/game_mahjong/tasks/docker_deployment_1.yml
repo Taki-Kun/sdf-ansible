@@ -1,0 +1,16 @@
+---
+
+- block:
+
+  - docker_service:
+      project_src: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/"
+      pull: yes
+      build: no
+    when:
+      - dirtype == 'game'
+      - use_zookeeper == 'on'
+
+  - docker_service:
+      project_src: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/"
+      pull: yes
+      build: no

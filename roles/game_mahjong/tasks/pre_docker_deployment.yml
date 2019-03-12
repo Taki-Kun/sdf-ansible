@@ -1,0 +1,10 @@
+---
+
+- name: "Log into private registry and force re-authorization"
+  include_tasks: "roles/common/tasks/docker_login.yml"
+
+- name: "include_tasks"
+  include_tasks: "pre_{{ deployment_method }}_deployment_{{ deployment_docker_submethod }}.yml"
+
+- name: "Log out of private registry"
+  include_tasks: "roles/common/tasks/docker_logout.yml"

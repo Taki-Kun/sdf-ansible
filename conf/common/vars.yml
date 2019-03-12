@@ -1,0 +1,153 @@
+---
+
+#####################################################################
+# Public
+
+# JDK
+JAVA_HOME: "/usr/local/jdk"
+
+# game节点（程序目录）
+DIR_NAME: "{{ directory }}"
+
+GAME_NAME: "{{ DIR_NAME }}"
+
+# game分布式群集组
+GROUP_NAME: "{{ hostvars[inventory_hostname].group_names.0 | regex_replace('_servers') }}"
+
+# 工作目录（Jenkins工作目录或Git工程目录）
+resources_dir: "{{ WORKSPACE }}"
+
+# 工作目录-game分支工程目录
+resources_game_dir: "{{ WORKSPACE }}/{{ GROUP_NAME }}"
+
+# 工作目录-构建目录
+build_dir: "{{ WORKSPACE }}/build"
+
+# 工作目录-构建目录-game分支
+build_game_dir: "{{ build_dir }}/{{ DIR_NAME }}"
+
+# 工作目录-构建产物目录
+target_dir: "{{ WORKSPACE }}/target"
+
+# 工作目录-构建产物目录-game分支
+target_game_dir: "{{ target_dir }}/{{ DIR_NAME }}"
+
+# Docker Compose Service Name
+SERVICES_NAME: "{{ DIR_NAME }}"
+
+# 工作目录-Dockerfile工程目录
+dockerfiles_dir: "{{ WORKSPACE }}/Dockerfiles"
+
+# 工作目录-Dockerfile工程目录-game模板
+dockerfiles_game_dir: "{{ dockerfiles_dir }}/templates/game"
+
+dockerfiles_redis_dir: "{{ dockerfiles_dir }}/templates/Redis"
+
+dockerfiles_zookeeper_dir: "{{ dockerfiles_dir }}/templates/Zookeeper"
+
+dockercompose_dir: "{{ WORKSPACE }}/DockerCompose"
+
+dockercompose_game_dir: "{{ dockercompose_dir }}/templates/game"
+
+dockercompose_zookeeper_dir: "{{ dockercompose_dir }}/templates/Zookeeper"
+
+# 构建目录-子级目录层级
+build_sub_dir:
+  - name: "build_dsqp_dir"
+    directories:
+      - "{{ build_game_dir }}/dsqp/conf/cluster"
+      - "{{ build_game_dir }}/dsqp/deploy"
+      - "{{ build_game_dir }}/dsqp/lang"
+      - "{{ build_game_dir }}/dsqp/lib"
+      - "{{ build_game_dir }}/dsqp/logs"
+      - "{{ build_game_dir }}/dsqp/fileData/conf"
+      - "{{ build_game_dir }}/dsqp/fileData/gameZip"
+      - "{{ build_game_dir }}/dsqp/fileData/headimg"
+      - "{{ build_game_dir }}/dsqp/fileData/images"
+      - "{{ build_game_dir }}/dsqp/fileData/log"
+      - "{{ build_game_dir }}/dsqp/fileData/pyjrecord"
+  - name: "build_config_dir"
+    directories:
+      - "{{ build_game_dir }}/config"
+  - name: "build_configure_dir"
+    directories:
+      - "{{ build_game_dir }}/configure/dsqp/conf/cluster"
+      - "{{ build_game_dir }}/configure/config"
+  - name: "build_templates_dir"
+    directories:
+      - "{{ build_game_dir }}/templates/dsqp/conf/cluster"
+      - "{{ build_game_dir }}/templates/config"
+
+build_binary_map:
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/game*.jar", dest: "{{ build_game_dir }}/dsqp/deploy/" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/majong_*.jar", dest: "{{ build_game_dir }}/dsqp/deploy/" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/platform_*.jar", dest: "{{ build_game_dir }}/dsqp/deploy/" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/lib/*", dest: "{{ build_game_dir }}/dsqp/lib/" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/lang/*", dest: "{{ build_game_dir }}/dsqp/lang/" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/filter.txt", dest: "{{ build_game_dir }}/dsqp/" }
+
+# game code配置
+vars_games_code_map_yml: "{{ resources_game_dir }}/Deploydir/dsqp/games_code_map.yml"
+
+# 配置模板
+template_log4j2_xml: "{{ build_game_dir }}/templates/dsqp/conf/log4j2.xml.template"
+template_hazelcast_xml: "{{ build_game_dir }}/templates/dsqp/conf/cluster/hazelcast.xml.template"
+template_jobs_xml: "{{ build_game_dir }}/templates/dsqp/jobs.xml.template"
+template_proxool_xml: "{{ build_game_dir }}/templates/dsqp/proxool.xml.template"
+template_quartz_properties: "{{ build_game_dir }}/templates/dsqp/quartz.properties.template"
+template_systemConfigRegEx_yml: "{{ build_game_dir }}/templates/dsqp/systemConfigRegEx.yml.template"
+template_systemConfig_yml: "{{ build_game_dir }}/templates/dsqp/systemConfig.yml.template"
+
+build_template_map:
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/conf/log4j2.xml.template", dest: "{{ template_log4j2_xml }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/conf/cluster/hazelcast.xml.template", dest: "{{ template_hazelcast_xml }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/jobs.xml.template", dest: "{{ template_jobs_xml }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/proxool.xml.template", dest: "{{ template_proxool_xml }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/quartz.properties.template", dest: "{{ template_quartz_properties }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/systemConfigRegEx.yml.template", dest: "{{ template_systemConfigRegEx_yml }}" }
+  - { src: "{{ resources_game_dir }}/Deploydir/dsqp/systemConfig.yml.template", dest: "{{ template_systemConfig_yml }}" }
+
+build_toconfig_map:
+  - { src: "{{ template_log4j2_xml }}", dest: "{{ build_game_dir }}/configure/dsqp/conf/log4j2.xml" }
+  - { src: "{{ template_hazelcast_xml }}", dest: "{{ build_game_dir }}/configure/dsqp/conf/cluster/hazelcast.xml" }
+  - { src: "{{ template_jobs_xml }}", dest: "{{ build_game_dir }}/configure/dsqp/jobs.xml" }
+  - { src: "{{ template_proxool_xml }}", dest: "{{ build_game_dir }}/configure/dsqp/proxool.xml" }
+  - { src: "{{ template_quartz_properties }}", dest: "{{ build_game_dir }}/configure/dsqp/quartz.properties" }
+  - { src: "{{ template_systemConfigRegEx_yml }}", dest: "{{ build_game_dir }}/configure/dsqp/systemConfigRegEx.yml" }
+  - { src: "{{ template_systemConfig_yml }}", dest: "{{ build_game_dir }}/configure/dsqp/systemConfig.yml" }
+  - { src: "{{ playbook_dir }}/templates/run.sh.template", dest: "{{ build_game_dir }}/configure/dsqp/run.sh" }
+
+target_docker_map:
+  - { src: "{{ dockerfiles_game_dir }}/Dockerfile.game_configuration.template", dest: "{{ target_game_dir }}/Dockerfile.game_configuration" }
+  - { src: "{{ dockerfiles_game_dir }}/docker-entrypoint.sh", dest: "{{ target_game_dir }}/docker-entrypoint.sh" }
+  - { src: "{{ dockerfiles_redis_dir }}/etc/redis/redis.conf", dest: "{{ target_game_dir }}/redis/etc/redis/redis.conf" }
+  - { src: "{{ dockercompose_game_dir }}/docker-compose.yml.template", dest: "{{ target_game_dir }}/docker-compose.yml" }
+
+target_docker_zookeeper_map:
+  - { src: "{{ dockerfiles_zookeeper_dir }}/etc/zookeeper/configuration.xsl", dest: "{{ target_game_dir }}/zookeeper/etc/zookeeper/configuration.xsl" }
+  - { src: "{{ dockerfiles_zookeeper_dir }}/etc/zookeeper/log4j.properties", dest: "{{ target_game_dir }}/zookeeper/etc/zookeeper/log4j.properties" }
+  - { src: "{{ dockerfiles_zookeeper_dir }}/etc/zookeeper/zoo.cfg", dest: "{{ target_game_dir }}/zookeeper/etc/zookeeper/zoo.cfg" }
+  - { src: "{{ dockerfiles_zookeeper_dir }}/etc/zookeeper/zoo_sample.cfg", dest: "{{ target_game_dir }}/zookeeper/etc/zookeeper/zoo_sample.cfg" }
+  - { src: "{{ dockercompose_zookeeper_dir }}/docker-compose.yml.template", dest: "{{ target_game_dir }}/docker-compose.zookeeper.yml" }
+
+archive_binary_map:
+  - { src: "{{ build_game_dir }}/dsqp", dest: "{{ target_game_dir }}/{{ DIR_NAME }}_dsqp.tar.gz" }
+
+archive_config_map:
+  - { src: "{{ build_game_dir }}/configure/dsqp", dest: "{{ target_game_dir }}/{{ DIR_NAME }}_configure.tar.gz" }
+
+#####################################################################
+
+# game run.sh
+
+run_script: "run.sh"
+
+APP_WORKERCLASS: "com.dszy.game.service.launch.DSQPTestWorker"
+
+#####################################################################
+
+# script_dir: /data/scripts/ansible
+
+# stop_script_name: gameserver_stop.sh
+
+# start_script_name: gameserver_start.sh

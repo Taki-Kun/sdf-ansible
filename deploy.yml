@@ -1,0 +1,14 @@
+---
+
+- name: "Deploying mahjong game"
+  hosts: "{{ GAME_HOST }}"
+  become: false
+  remote_user: root
+  gather_facts: false
+  any_errors_fatal: true
+  pre_tasks:
+    - name: "include pre_tasks"
+      include_tasks: "roles/game_mahjong/tasks/pre_main.yml"
+
+  roles:
+    - { role: game_mahjong, tags: ["game_mahjong"] }

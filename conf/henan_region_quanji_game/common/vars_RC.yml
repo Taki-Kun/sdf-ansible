@@ -1,0 +1,84 @@
+---
+
+##################################################
+## game.properties
+##################################################
+central_activityURL: "http://10.2.11.224:20001/"
+central_shoppingCenterURL: "http://10.2.11.224:40000/shoppingCenter"
+central_logLevel: "DEBUG"
+central_game_properties_zookeeper_server_url: "{{ Docker_zookeeper_container_ipv4_address }}"
+central_old_client_map: "wxa7e6046c65cd0147:1.0.0_1.0.2,wxd66e038da684897f:1.0.0_1.0.1"
+
+##################################################
+## ClubDataBaseConfig.json
+##################################################
+central_club_mysql_address: "10.2.11.224"
+central_club_mysql_port: "3306"
+central_club_mysql_user_name: "gitlab_user"
+central_club_mysql_passwd: "6W2TIcVvhG5CPZPm"
+
+##################################################
+## DictDataBaseConfig.json
+##################################################
+central_mysql_dict_host: "10.2.11.224"
+central_mysql_dict_port: "3306"
+central_mysql_dict_user: "gitlab_user"
+central_mysql_dict_password: "6W2TIcVvhG5CPZPm"
+
+##################################################
+## DataBaseConfig.json
+##################################################
+central_mysql_host: "10.2.11.224"
+central_mysql_port: "3306"
+central_mysql_user: "gitlab_user"
+central_mysql_password: "6W2TIcVvhG5CPZPm"
+central_db_name: "henan_region_dev"
+central_log_db_name: "henan_region_log_dev"
+
+##################################################
+## GameConfig.json
+##################################################
+central_sub_project_ids: "10006_10085_10094_10061_10084_10092_10093_10049_10068_10071_10166_10072_10082_10081_10067_10074_10057_10073_10077_10078_10080_10058_10059_10060_10070"
+
+##################################################
+## ResConfig.json
+##################################################
+central_res_conf_game_zip_url: "http://112.74.174.12:35443/gameZip/"
+central_res_conf_head_img_url: "http://112.74.174.12:35443/headimg/"
+central_res_conf_image_url: "http://112.74.174.12:8090/SA/GameConfig/Place/"
+central_res_conf_record_url: "http://112.74.174.12:35443/pyjrecord/"
+central_res_conf_merge_android_url: ""
+central_res_conf_merge_IOS_url: ""
+central_res_conf_merge_desc: ""
+
+##################################################
+## UserConfig.json
+##################################################
+central_privateRoomDiamond: "12"
+central_client_version: "1.0.1"
+central_check_version_list: "all"
+
+##################################################
+## cardControlConfig
+##################################################
+central_card_control_config: "probability:gt6-20_gt5-10_gt4-0_lt1.5-30,n:3,types:dz-1_kz-1.5_sg-2_sz-1.5"
+
+##################################################
+## logDataBaseConfig:
+##################################################
+central_log_mysql_host: "10.2.11.224"
+central_log_mysql_port: "3306"
+central_log_mysql_user: "gitlab_user"
+central_log_mysql_password: "6W2TIcVvhG5CPZPm"
+
+##################################################
+## conf/cluster/hazelcast.xml
+##################################################
+game_server_host: "{{ docker_network_subnet | regex_replace('0/24', '10') | default('') }}"
+gateway1_server_host: "{{ docker_network_subnet | regex_replace('0/24', '11') | default('') }}"
+gateway2_server_host: "{{ docker_network_subnet | regex_replace('0/24', '12') | default('') }}"
+
+##################################################
+## API KEY
+##################################################
+central_apikey: "nJ4pEN31ZAaAktVhhNfySU9QMvcrigyD"

@@ -1,0 +1,43 @@
+---
+
+- stat:
+    path: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/docker-compose.yml"
+  register: st
+
+- block:
+
+  - docker_service:
+      project_src: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/"
+      state: absent
+
+  - docker_service:
+      project_src: "{{ deploy_docker_dir }}/{{ SERVICES_NAME }}/zookeeper/"
+      state: absent
+    ignore_errors: true
+    when:
+      - dirtype == 'game'
+
+  when:
+    - st.stat.exists
+
+- block:
+
+  - name: "Delete a network, disconnecting all containers"
+    docker_network:
+      name: "{{ Docker_compose_network }}"
+      state: absent
+      force: yes
+    ignore_errors: true
+    when:
+      - ((stand_alone == 'on') and (dirtype == 'game')) or (stand_alone != 'on')
+
+  - name: "Create a network with options"
+    docker_network:
+      name: "{{ Docker_compose_network }}"
+      ipam_driver: "default"
+      ipam_options:
+        subnet: "{{ docker_network_subnet }}"
+        gateway: "{{ docker_network_gateway }}"
+        iprange: "{{ docker_network_iprange }}"
+    when:
+      - ((stand_alone == 'on') and (dirtype == 'game')) or (stand_alone != 'on')

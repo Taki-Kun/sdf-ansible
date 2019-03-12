@@ -1,0 +1,29 @@
+---
+
+Docker_redis_container_ipv4_address: ""
+Docker_game_container_ipv4_address: ""
+
+##################################################
+## game.properties
+##################################################
+central_game_properties_server_id: ""
+central_game_properties_server_url: ""
+
+##################################################
+## CacheConfig.json
+##################################################
+central_redis_port: ""
+central_redis_url: ""
+
+##################################################
+## JVM OPTION
+##################################################
+java_option_Xms: ""
+java_option_Xmx: ""
+java_option_Xmn: ""
+
+##################################################
+## conf/cluster/hazelcast.xml
+##################################################
+hazelcast_host: ""
+hazelcast_port: ""

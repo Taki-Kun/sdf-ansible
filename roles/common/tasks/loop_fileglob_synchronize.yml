@@ -1,0 +1,9 @@
+---
+
+- name: "Push {{ outer_item }} sync"
+  synchronize:
+    src: "{{ item }}"
+    dest: "{{ outer_item.dest }}"
+    delete: yes
+  delegate_to: localhost
+  with_fileglob: "{{ outer_item.src }}"

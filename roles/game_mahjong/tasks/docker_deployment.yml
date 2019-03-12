@@ -1,0 +1,43 @@
+---
+
+- block:
+
+  - name: "Create Deploy Docker Directories"
+    include_tasks: "roles/common/tasks/loop_items_file.yml"
+    loop: "{{ deploy_docker_sub_dir }}"
+    loop_control:
+      loop_var: outer_item
+      label: "{{ outer_item.name }}"
+
+  - name: "Create Deploy Docker Zookeeper Directories"
+    include_tasks: "roles/common/tasks/loop_items_file.yml"
+    loop: "{{ deploy_docker_zookeeper_dir }}"
+    loop_control:
+      loop_var: outer_item
+    when:
+      - dirtype == 'game'
+      - use_zookeeper == 'on'
+
+  - name: "Sync Docker file to Deploy Folder"
+    include_tasks: "roles/common/tasks/loop_fileglob_synchronize.yml"
+    loop: "{{ deploy_docker_map }}"
+    loop_control:
+      loop_var: outer_item
+
+  - name: "Sync Docker Zookeeper file to Deploy Folder"
+    include_tasks: "roles/common/tasks/loop_fileglob_synchronize.yml"
+    loop: "{{ deploy_docker_zookeeper_map }}"
+    loop_control:
+      loop_var: outer_item
+    when:
+      - dirtype == 'game'
+      - use_zookeeper == 'on'
+
+- name: "Log into private registry and force re-authorization"
+  include_tasks: "roles/common/tasks/docker_login.yml"
+
+- name: "include_tasks"
+  include_tasks: "{{ deployment_method }}_deployment_{{ deployment_docker_submethod }}.yml"
+
+- name: "Log out of private registry"
+  include_tasks: "roles/common/tasks/docker_logout.yml"

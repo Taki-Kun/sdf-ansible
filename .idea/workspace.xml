@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="235de477-03a8-4776-969d-d450f8081679" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/cloud/aws-ansible/ec2.py" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/cloud/aws-ansible/ec2.py" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/hosts.ini" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/hosts.ini" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/inventory.ini" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/inventory.ini" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/log/ansible.log" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/log/ansible.log" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/grafana/templates/run_grafana_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/grafana/templates/run_grafana_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/grafana/templates/run_grafana_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/grafana/templates/run_grafana_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/node_exporter/templates/run_node_exporter_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/node_exporter/templates/run_node_exporter_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/node_exporter/templates/run_node_exporter_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/node_exporter/templates/run_node_exporter_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/ops/templates/check_tikv.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/ops/templates/check_tikv.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pd/templates/run_pd_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pd/templates/run_pd_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pd/templates/run_pd_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pd/templates/run_pd_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/prometheus/templates/run_prometheus_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/prometheus/templates/run_prometheus_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/prometheus/templates/run_prometheus_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/prometheus/templates/run_prometheus_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pump/templates/run_pump_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pump/templates/run_pump_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pump/templates/run_pump_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pump/templates/run_pump_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pushgateway/templates/run_pushgateway_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pushgateway/templates/run_pushgateway_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pushgateway/templates/run_pushgateway_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/pushgateway/templates/run_pushgateway_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/supervise/templates/start_role.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/supervise/templates/start_role.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/supervise/templates/stop_role.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/supervise/templates/stop_role.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/systemd/templates/start_role.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/systemd/templates/start_role.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/systemd/templates/stop_role.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/systemd/templates/stop_role.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tidb/templates/run_tidb_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tidb/templates/run_tidb_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tidb/templates/run_tidb_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tidb/templates/run_tidb_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tikv/templates/run_tikv_binary.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tikv/templates/run_tikv_binary.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tikv/templates/run_tikv_docker.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tikv/templates/run_tikv_docker.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tispark/templates/spark-env.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tispark/templates/spark-env.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tispark/templates/start-slave.sh.j2" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/roles/tispark/templates/start-slave.sh.j2" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/scripts/grafana-config-copy.py" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/scripts/grafana-config-copy.py" />
+      <change beforePath="$PROJECT_DIR$/downloads/tidb-ansible/scripts/metrics-delete.py" afterPath="$PROJECT_DIR$/downloads/tidb-ansible/scripts/metrics-delete.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-1264">
+                <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>deploy_dir_st</find>
+      <find>game_group_dir_st</find>
+      <find>deployment_method</find>
+      <find>JAVA_OPTS</find>
+      <find>run.sh</find>
+      <find>JAVA_WORKER</find>
+      <find>APP_MAINCLASS</find>
+      <find>{{</find>
+      <find>java_option</find>
+      <find>resources_game_dir</find>
+      <find>game_type_dir_st</find>
+      <find>game_type_dir_clean_st</find>
+      <find>registry_default_usergroup</find>
+      <find>dirtype</find>
+      <find>target_docker_zookeeper_map</find>
+      <find>DIR_NAME</find>
+      <find>SERVICES_NAME</find>
+      <find>Docker_compose_network</find>
+      <find>GROUP_NAME</find>
+      <find>RES_PORT</find>
+      <find>build_toconfig_map</find>
+      <find>docker_mount_dir</find>
+      <find>deploy_docker_dir</find>
+      <find>template_log4j2_xml</find>
+      <find>ansible</find>
+      <find>WORKSPACE</find>
+      <find>- stat</find>
+      <find>stat:</find>
+      <find>development</find>
+      <find>produ</find>
+    </findStrings>
+    <dirStrings>
+      <dir>E:\mine\Ansible\test\downloads</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/downloads/tidb-ansible" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/roles/local/tasks/docker_deployment_1.yml" />
+        <option value="$PROJECT_DIR$/roles/game_mahjong/tasks/pre_main.yml" />
+        <option value="$PROJECT_DIR$/roles/common/tasks/docker_login.yml" />
+        <option value="$PROJECT_DIR$/roles/common/tasks/docker_logout.yml" />
+        <option value="$PROJECT_DIR$/roles/local/tasks/docker_deployment.yml" />
+        <option value="$PROJECT_DIR$/roles/game_mahjong/tasks/docker_deployment.yml" />
+        <option value="$PROJECT_DIR$/roles/game_mahjong/tasks/pre_docker_deployment.yml" />
+        <option value="$PROJECT_DIR$/roles/game_mahjong/tasks/docker_deployment_1.yml" />
+        <option value="$PROJECT_DIR$/deploy.yml" />
+        <option value="$PROJECT_DIR$/local_prepare.yml" />
+        <option value="$PROJECT_DIR$/create_default_conf.yml" />
+        <option value="$PROJECT_DIR$/ansible.cfg" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/game/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/router1/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/router2/vars.yml" />
+        <option value="$PROJECT_DIR$/../DockerCompose/templates/MySQL/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/roles/test/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/conf/common/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/game/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/router1/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/router2/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/../DockerCompose/templates/game/docker-compose.yml.template" />
+        <option value="$PROJECT_DIR$/inventories/RTM/hosts_RTM.ini" />
+        <option value="$PROJECT_DIR$/inventories/RTM/inventory_RTM.ini" />
+        <option value="$PROJECT_DIR$/inventories/RTM/local_inventory_RTM.ini" />
+        <option value="$PROJECT_DIR$/../Jenkinsfile/master/ciSharedJenkinsfile.groovy" />
+        <option value="$PROJECT_DIR$/../Jenkinsfile/jiangsu_region_game/Jenkinsfile" />
+        <option value="$PROJECT_DIR$/conf/common/vars.yml" />
+        <option value="$PROJECT_DIR$/../Jenkinsfile/master/Jenkinsfile" />
+        <option value="$PROJECT_DIR$/roles/game_mahjong/tasks/pre_docker_deployment_1.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/common/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/jiangsu_region_game/common/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/inventories/RC/inventory_RC.ini" />
+        <option value="$PROJECT_DIR$/inventories/RC/local_inventory_RC.ini" />
+        <option value="$PROJECT_DIR$/conf/default/common/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/default/common/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/default/common/vars_RTM.yml" />
+        <option value="$PROJECT_DIR$/conf/default/game/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/default/game/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/default/game/vars_RTM.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router1/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router1/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router1/vars_RTM.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router2/vars.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router2/vars_RC.yml" />
+        <option value="$PROJECT_DIR$/conf/default/router2/vars_RTM.yml" />
+        <option value="$PROJECT_DIR$/../Jenkinsfile/master/README.md" />
+        <option value="$PROJECT_DIR$/../Dockerfiles/README.md" />
+        <option value="$PROJECT_DIR$/../DockerCompose/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="272" />
+    <option name="y" value="7" />
+    <option name="width" value="1598" />
+    <option name="height" value="909" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="router1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="router2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="jiangsu_region_game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="jiangsu_region_game" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="jiangsu_region_game" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="jiangsu_region_game" type="462c0819:PsiDirectoryNode" />
+              <item name="router1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="jiangsu_region_game" type="462c0819:PsiDirectoryNode" />
+              <item name="router2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="inventories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="inventories" type="462c0819:PsiDirectoryNode" />
+              <item name="RC" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="inventories" type="462c0819:PsiDirectoryNode" />
+              <item name="RTM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="create_default_conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="create_default_conf" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="game_mahjong" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="game_mahjong" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="virtual_environment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="virtual_environment" type="462c0819:PsiDirectoryNode" />
+              <item name="bootstrap_env" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="DockerCompose" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="DockerCompose" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="DockerCompose" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="DockerCompose" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="DockerCompose" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Zookeeper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Zookeeper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Zookeeper" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CD" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="Dockerfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Zookeeper" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
+              <item name="zookeeper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Dockerfiles" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\mine\Ansible\DockerCompose\templates\game" />
+      <recent name="E:\mine\Ansible\test\roles\common\tasks" />
+      <recent name="E:\mine\Ansible\test\roles\clean\tasks" />
+      <recent name="E:\mine\Ansible\test\roles" />
+      <recent name="E:\mine\Ansible\test\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\mine\Ansible\DockerCompose" />
+      <recent name="E:\mine\Ansible\Dockerfiles" />
+      <recent name="E:\mine\Ansible\test\conf" />
+      <recent name="E:\mine\Ansible\DockerCompose\templates\MySQL" />
+      <recent name="E:\mine\Ansible\test\roles\game_mahjong\tasks" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="test" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Twisted Trial">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="235de477-03a8-4776-969d-d450f8081679" name="Default" comment="" />
+      <created>1524454232325</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1524454232325</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="272" y="7" width="1598" height="909" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12564766" sideWeight="0.50780237" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12564766" sideWeight="0.49219766" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17295189" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20221066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901555" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Dockerfiles/templates/Zookeeper/Dockerfile.zookeeper_configuration">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="54" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dockerfiles/templates/Zookeeper/docker-entrypoint.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dockerfiles/templates/Zookeeper/etc/zookeeper/zoo.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deploy.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/game_mahjong/tasks/pre_main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/game_mahjong/tasks/pre_docker_deployment.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/common/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/roles/bootstrap/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-271">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/roles/pd/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="21" column="64" lean-forward="false" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/roles/tidb/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/roles/local/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-975">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/roles/machine_benchmark/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-573">
+          <caret line="3" column="39" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/local_prepare.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/downloads/tidb-ansible/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-223">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/common/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="77" column="71" lean-forward="false" selection-start-line="77" selection-start-column="71" selection-end-line="77" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/run.sh.example">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="62" column="134" lean-forward="false" selection-start-line="62" selection-start-column="124" selection-end-line="62" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Jenkinsfile/master/ciSharedJenkinsfile.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Jenkinsfile/master/Jenkinsfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="175" column="45" lean-forward="true" selection-start-line="175" selection-start-column="45" selection-end-line="175" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/run.sh.template">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="47" column="10" lean-forward="true" selection-start-line="47" selection-start-column="10" selection-end-line="47" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/game_mahjong/tasks/pre_docker_deployment_1.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/common/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/common/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="69" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/common/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/game/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/game/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/game/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/game/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/common/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="83" column="17" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/common/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/common/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router1/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/router1/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/router1/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="50" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/game/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="28" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/game/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router1/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router1/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/router2/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router2/vars.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/jiangsu_region_game/router2/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router2/vars_RC.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/default/router2/vars_RTM.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="28" column="17" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Jenkinsfile/master/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="852">
+            <caret line="54" column="4" lean-forward="false" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DockerCompose/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="32">
+            <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Dockerfiles/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="32">
+            <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventories/RC/hosts_RC.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventories/RC/local_inventory_RC.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="42" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inventories/RC/inventory_RC.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="74" column="12" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/roles/bootstrap/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-1264">
+            <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
